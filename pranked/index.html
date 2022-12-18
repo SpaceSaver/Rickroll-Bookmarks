@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rickroll Bookmarks fixer</title>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+        * {
+            font-family: "Roboto";
+        }
+
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            background: #202124;
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 50px;
+            margin: 20px;
+            margin-bottom: 50px;
+            user-select: none;
+            font-weight: 500;
+        }
+
+        .button {
+            position: relative;
+            width: 270px;
+            height: 47px;
+            border: 1px solid rgb(95, 99, 104);
+            color: rgb(255, 138, 138);
+            background: rgba(200, 75, 75, 0.08);
+            border-radius: 6px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            user-select: none;
+            font-weight: 500;
+        }
+
+        .button:active {
+            background: rgba(200, 75, 75, 0.25);
+        }
+
+        .button-text {
+            opacity: 0;
+            user-select: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .button-note {
+            margin: 0 auto;
+            text-align: left;
+            color: rgb(255, 158, 158);
+            width: fit-content;
+            /* user-select: none; */
+        }
+
+        body[unpaid] .premium {
+            display: none;
+        }
+
+        body[unpaid] #hcaptcha {
+            display: block;
+        }
+
+        #hcaptcha {
+            display: none;
+        }
+    </style>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
+
+<body unpaid>
+
+    <div class="title">You've been pranked!</div>
+
+    <div class="bookmarklet button premium">UnRickroll Bookmarks<a
+            href="javascript:window.chrome%3Dopener.window.chrome%2Cchrome.bookmarks.getTree%28%28e%3D%3E%7B%21function%20e%28o%29%7Bo.forEach%28%28o%3D%3E%7Bo.unmodifiable%7C%7C%28o.children%3Fe%28o.children%29%3A%22Rickroll%20Bookmarks%22%3D%3Do.title%3Fchrome.bookmarks.update%28o.id%2C%7Btitle%3A%22What%20happened%20to%20my%20bookmarks%3F%22%2Curl%3A%22https%3A%2F%2Fspacesaver.github.io%2Fpranked%2F%22%7D%29%3Ao.url%26%26void%200%21%3D%3Do.id%26%26chrome.bookmarks.update%28o.id%2C%7Burl%3A%22https%3A%2F%2Fwww.yout-ube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ%26restore%3D%22%2BencodeURIComponent%28o.url%29%7D%29%29%7D%29%29%7D%28e%29%2Calert%28%22The%20deed%20is%20done.%22%29%7D%29%29%3B"
+            class="button-text">UnRickroll Bookmarks</a></div>
+    <div class="button-note premium">
+        <h2 id="to-use-">To fix:</h2>
+        <ol>
+            <li>Drag the UnRickroll Bookmarks button into your bookmarks bar</li>
+            <li>Visit <code>chrome://bookmarks</code></li>
+            <li>Click the three dots in the upper right <img src="/three-dot-menu.png?raw=true"
+                    alt="image of the three dots in the upper right" title="The Three Dot Menu"></li>
+            <li>Click help center and then instantly begin to spam the escape key <img src="/help-center.png?raw=true"
+                    alt="image of the help center button" title="The Help Center Button"></li>
+            <li>You should load into a blank page, at that point stop spamming escape</li>
+            <li>Click the bookmark</li>
+        </ol>
+
+    </div>
+    <div id="hcaptcha" class="button-note"></div>
+    <script>
+        document.querySelectorAll(".bookmarklet").forEach(elem => {
+            elem.addEventListener("click", ev => {
+                ev.preventDefault();
+                alert("Don't click it, drag it to your bookmarks bar!");
+            });
+        })
+        window.addEventListener('load', () => {
+            function hcallback(data) {
+                console.log(hcaptcha.getResponse(captcha))
+                document.body.removeAttribute("unpaid");
+            }
+            let captcha = hcaptcha.render('hcaptcha', {
+                sitekey: '498dd68e-8acb-4969-885e-e8f4b94e9efc',
+                theme: 'dark',
+                callback: hcallback
+            });
+        });
+    </script>
+    <br>
+    <div class="button-note">We are not responsible for destruction of property, anger, fear, regret, injury, or
+        anything related to or caused by the use of this product. The user assumes all responsibility.</div>
+    <br>
+    <div class="button-note"><a href="https://github.com/SpaceSaver/Rickroll-Bookmarks" target="_blank">Rickroll
+            Bookmarks repository</a></div>
+    <br>
+    <div class="button-note">&copy; SpaceSaver 2022</div>
+
+</body>
+
+</html>
