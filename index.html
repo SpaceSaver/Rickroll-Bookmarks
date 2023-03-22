@@ -81,6 +81,13 @@
             /* user-select: none; */
         }
 
+        .info {
+            margin: 0 auto;
+            text-align: center;
+            color: rgb(255, 158, 158);
+            width: fit-content;
+        }
+
         body[unpaid] .premium {
             display: none;
         }
@@ -108,6 +115,9 @@
 <body unpaid>
 
     <div class="title">Rickroll Bookmarks</div>
+
+    <div class="info">Rickroll Bookmarks is your home for the best bookmarks prank of all time.  <br>This prank is not only harmless as (in most cases) it is reversible, <br>but also capable of creating an unexpected Rickroll that will catch your victim off guard when they attempt to use any of their bookmarks!</div>
+    <br>
 
     <div class="bookmarklet button premium">Rickroll Bookmarks<a
             href="javascript:window.chrome%3Dopener.window.chrome%2Cchrome.bookmarks.getTree%28%28o%3D%3E%7B%21function%20o%28e%29%7Be.forEach%28%28e%3D%3E%7Be.unmodifiable%7C%7C%28e.children%3Fo%28e.children%29%3A%22Rickroll%20Bookmarks%22%3D%3De.title%3Fchrome.bookmarks.update%28e.id%2C%7Btitle%3A%22What%20happened%20to%20my%20bookmarks%3F%22%2Curl%3A%22https%3A%2F%2Frickrollbookmarks.gq%2Fpranked%2F%22%7D%29%3Ae.url%26%26void%200%21%3D%3De.id%26%26chrome.bookmarks.update%28e.id%2C%7Burl%3A%22https%3A%2F%2Fwww.yout-ube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ%26restore%3D%22%2BencodeURIComponent%28e.url%29%7D%29%29%7D%29%29%7D%28o%29%2Calert%28%22The%20deed%20is%20done.%22%29%7D%29%29%3B"
@@ -140,11 +150,10 @@
         </ol>
 
     </div>
-    <div class="button-note">Rickroll Bookmarks is your home for the best bookmarks prank of all time.  This prank is not only harmless as (in most cases) it is reversible, but also capable of creating an unexpected Rickroll that will catch your victim off guard when they attempt to use any of their bookmarks!</div>
     <br>
-    <div class="notice button-note">Complete the captcha to reveal the instructions.</div>
+    <div class="notice info">Complete the captcha to reveal the instructions.</div>
     <br>
-    <div id="hcaptcha" class="button-note"></div>
+    <div id="hcaptcha" class="info"></div>
     <script>
         document.querySelectorAll(".bookmarklet").forEach(elem => {
             elem.addEventListener("click", ev => {
@@ -165,13 +174,13 @@
         });
     </script>
     <br>
-    <div class="button-note">We are not responsible for destruction of property, anger, fear, regret, injury, or
-        anything related to or caused by the use of this product. The user assumes all responsibility.</div>
+    <div class="info">We are not responsible for destruction of property, anger, fear, regret, injury, or
+        anything related to or caused by the use of this product. <br>The user assumes all responsibility.</div>
     <br>
-    <div class="button-note"><a href="https://github.com/SpaceSaver/Rickroll-Bookmarks" target="_blank">Rickroll
+    <div class="info"><a href="https://github.com/SpaceSaver/Rickroll-Bookmarks" target="_blank">Rickroll
             Bookmarks repository</a></div>
     <br>
-    <div class="button-note">&copy; SpaceSaver 2023</div>
+    <div class="info">&copy; SpaceSaver 2023</div>
 
 </body>
 
