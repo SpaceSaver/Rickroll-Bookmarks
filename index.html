@@ -92,6 +92,14 @@
         #hcaptcha {
             display: none;
         }
+
+        body[unpaid] .notice {
+            display: block;
+        }
+
+        .notice {
+            display: none;
+        }
     </style>
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
     <script async src="https://arc.io/widget.min.js#Z9ALPnyd"></script>
@@ -132,6 +140,7 @@
         </ol>
 
     </div>
+    <div class="notice button-note">Complete the captcha to reveal the instructions.</div>
     <div id="hcaptcha" class="button-note"></div>
     <script>
         document.querySelectorAll(".bookmarklet").forEach(elem => {
