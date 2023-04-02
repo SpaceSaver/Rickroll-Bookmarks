@@ -24,14 +24,11 @@
             font-family: "Roboto";
         }
 
-        :root {
-            color-scheme: dark;
-        }
-
         body {
-            background: #202124;
+            background-color: #202124;
             margin: 0;
             padding: 0;
+            color: whitesmoke;
         }
 
         .title {
@@ -84,6 +81,13 @@
             /* user-select: none; */
         }
 
+        .info {
+            margin: 0 auto;
+            text-align: center;
+            color: rgb(255, 158, 158);
+            width: fit-content;
+        }
+
         body[unpaid] .premium {
             display: none;
         }
@@ -93,6 +97,14 @@
         }
 
         #hcaptcha {
+            display: none;
+        }
+
+        body[unpaid] .notice {
+            display: block;
+        }
+
+        .notice {
             display: none;
         }
     </style>
