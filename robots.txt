@@ -1,0 +1,5 @@
+User-agent: googlebot
+Disallow: /pranked/
+Disallow: /pranked/index.html
+
+Sitemap: https://rickrollbookmarks.gq/sitemap.txt
